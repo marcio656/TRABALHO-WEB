@@ -1,0 +1,214 @@
+/* =========================
+   RESET + BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f6f7fb;
+  color: #111827;
+}
+
+/* =========================
+   TEMA
+========================= */
+:root {
+  --primary: #4f46e5;
+  --primary-hover: #3730a3;
+
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+
+  --border: #e5e7eb;
+
+  --radius: 12px;
+
+  --shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+
+/* =========================
+   LAYOUT PRINCIPAL
+========================= */
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* =========================
+   SIDEBAR (ASIDE)
+========================= */
+.sidebar {
+  width: 240px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+.sidebar div
+{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.sidebar h2 {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+.sidebar button{
+  width: 100%;
+}
+
+.sidebar a {
+  display: block;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--text);
+  transition: 0.2s;
+}
+
+.sidebar a:hover {
+  background: #eef2ff;
+  color: var(--primary);
+}
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+.main {
+  flex: 1;
+  padding: 24px;
+}
+
+/* =========================
+   HEADER INTERNO
+========================= */
+.header {
+  background: var(--surface);
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* =========================
+   GRID (CARDS)
+========================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================
+   FORMULÁRIOS
+========================= */
+.form {
+  background: var(--surface);
+  padding: 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  outline: none;
+  transition: 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(79,70,229,0.15);
+}
+
+/* =========================
+   BOTÕES
+========================= */
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 500;
+}
+
+button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+/* =========================
+   UTILITÁRIOS
+========================= */
+.page-title {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 768px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .main {
+    padding: 16px;
+  }
+}
