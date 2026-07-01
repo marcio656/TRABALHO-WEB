@@ -21,7 +21,7 @@ export default function Servicos() {
             await servicoService.criar({ descricao, data_servico });
             setDescricao('');
             setData_servico('');
-            carregarServicos(); // Atualiza a lista após cadastrar
+            carregarServicos(); 
         } catch (error) {
             console.error("Erro ao cadastrar", error);
         }
